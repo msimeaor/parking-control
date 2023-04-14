@@ -19,38 +19,31 @@ public class VagaEstacionamentoServiceImpl implements VagaEstacionamentoService 
         this.vagaEstacionamentoRepository = vagaEstacionamentoRepository;
     }
 
-    @Override
     @Transactional
     public VagaEstacionamento save(VagaEstacionamento vagaEstacionamento) {
         return vagaEstacionamentoRepository.save(vagaEstacionamento);
     }
 
-    @Override
     public boolean existsByPlacaCarro(String placaCarro) {
         return vagaEstacionamentoRepository.existsByPlacaCarro(placaCarro);
     }
 
-    @Override
     public boolean existsByNumeroVaga(String numeroVaga) {
         return vagaEstacionamentoRepository.existsByNumeroVaga(numeroVaga);
     }
 
-    @Override
     public boolean existsByApartamentoAndBlocoApartamento(String numeroApartamento, String numeroBloco) {
         return vagaEstacionamentoRepository.existsByApartamentoAndBlocoApartamento(numeroApartamento, numeroBloco);
     }
 
-    @Override
     public List<VagaEstacionamento> findAll() {
         return vagaEstacionamentoRepository.findAll();
     }
 
-    @Override
     public Optional<VagaEstacionamento> findById(UUID id) {
         return vagaEstacionamentoRepository.findById(id);
     }
 
-    @Override
     @Transactional
     public void deleteById(UUID id) {
         vagaEstacionamentoRepository.deleteById(id);
